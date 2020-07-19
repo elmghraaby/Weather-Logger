@@ -7,8 +7,10 @@ package com.elmaghraby.ucptask.ui.weather.future.list
 import com.elmaghraby.ucptask.R
 import com.elmaghraby.ucptask.data.dp.unitlocalized.future.list.MetricSimpleFutureWeatherEntry
 import com.elmaghraby.ucptask.data.dp.unitlocalized.future.list.UnitSpecificSimpleFutureWeatherEntry
+import com.elmaghraby.ucptask.internal.glide.GlideApp
 import com.xwray.groupie.kotlinandroidextensions.Item
 import com.xwray.groupie.kotlinandroidextensions.ViewHolder
+import kotlinx.android.synthetic.main.item_future_weather.*
 import org.threeten.bp.format.DateTimeFormatter
 import org.threeten.bp.format.FormatStyle
 

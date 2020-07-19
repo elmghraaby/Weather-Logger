@@ -66,9 +66,9 @@ class MainActivity : AppCompatActivity(), KodeinAware {
         )
     }
 
-//    override fun onSupportNavigateUp(): Boolean {
-//        return NavigationUI.navigateUp(null , navController)
-//    }
+    override fun onSupportNavigateUp(): Boolean {
+        return NavigationUI.navigateUp(navController , null)
+    }
 
     private fun requestLocationPermission() {
         ActivityCompat.requestPermissions(

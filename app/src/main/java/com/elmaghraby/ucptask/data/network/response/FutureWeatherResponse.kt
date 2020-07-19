@@ -8,7 +8,7 @@ import com.elmaghraby.ucptask.data.dp.entity.WeatherLocation
 import com.google.gson.annotations.SerializedName
 
 data class FutureWeatherResponse(
-    @SerializedName("forecast")
+    @SerializedName("daily")
     val futureWeatherEntries: ForecastDaysContainer,
     val location: WeatherLocation
 )

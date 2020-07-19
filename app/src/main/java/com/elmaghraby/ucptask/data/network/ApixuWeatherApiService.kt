@@ -16,21 +16,19 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 
-const val API_KEY = "89e8bd89085b41b7a4b142029180210"
+const val API_KEY = "eb4ba464706cbd23f6f78209dbd49ad4"
 
-//http://api.apixu.com/v1/current.json?key=89e8bd89085b41b7a4b142029180210&q=London&lang=en
 
 interface ApixuWeatherApiService {
 
-    @GET("current.json")
+    @GET("current")
     fun getCurrentWeather(
         @Query("q") location: String,
         @Query("lang") languageCode: String = "en"
     ): Deferred<CurrentWeatherResponse>
 
 
-    // https://api.apixu.com/v1/forecast.json?key=89e8bd89085b41b7a4b142029180210&q=Los%20Angeles&days=1
-    @GET("forecast.json")
+    @GET("daily")
     fun getFutureWeather(
         @Query("q") location: String,
         @Query("days") days: Int,
@@ -63,7 +61,7 @@ interface ApixuWeatherApiService {
 
             return Retrofit.Builder()
                 .client(okHttpClient)
-                .baseUrl("https://api.apixu.com/v1/")
+                .baseUrl("https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude={part}&appid=")
                 .addCallAdapterFactory(CoroutineCallAdapterFactory())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()

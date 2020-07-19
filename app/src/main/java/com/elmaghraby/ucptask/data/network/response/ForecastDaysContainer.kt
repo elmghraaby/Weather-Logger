@@ -8,6 +8,6 @@ import com.elmaghraby.ucptask.data.dp.entity.FutureWeatherEntry
 import com.google.gson.annotations.SerializedName
 
 data class ForecastDaysContainer(
-    @SerializedName("forecastday")
+    @SerializedName("daily")
     val entries: List<FutureWeatherEntry>
 )

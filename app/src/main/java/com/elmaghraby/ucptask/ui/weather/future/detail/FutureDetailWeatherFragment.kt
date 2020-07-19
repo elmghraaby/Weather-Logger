@@ -20,6 +20,7 @@ import com.bumptech.glide.Glide
 import com.elmaghraby.ucptask.R
 import com.elmaghraby.ucptask.data.dp.LocalDateConverter
 import com.elmaghraby.ucptask.internal.DateNotFoundException
+import com.elmaghraby.ucptask.internal.glide.GlideApp
 import com.elmaghraby.ucptask.ui.base.ScopedFragment
 import kotlinx.android.synthetic.main.current_weather_fragment.*
 
@@ -82,9 +83,9 @@ class FutureDetailWeatherFragment : ScopedFragment(), KodeinAware {
             updateVisibility(weatherEntry.avgVisibilityDistance)
             updateUv(weatherEntry.uv)
 
-            Glide.with(this@FutureDetailWeatherFragment)
+            GlideApp.with(this@FutureDetailWeatherFragment)
                 .load("http:" + weatherEntry.conditionIconUrl)
-                .into(imageView_condition_icon)
+                .into(imageView_condition_icon1)
         })
     }
 
@@ -103,8 +104,8 @@ class FutureDetailWeatherFragment : ScopedFragment(), KodeinAware {
 
     private fun updateTemperatures(temperature: Double, min: Double, max: Double) {
         val unitAbbreviation = chooseLocalizedUnitAbbreviation("°C", "°F")
-        textView_temperature.text = "$temperature$unitAbbreviation"
-        textView_min_max_temperature.text = "Min: $min$unitAbbreviation, Max: $max$unitAbbreviation"
+        textView_temperature1.text = "$temperature$unitAbbreviation"
+        textView_min_max_temperature1.text = "Min: $min$unitAbbreviation, Max: $max$unitAbbreviation"
     }
 
     private fun updateCondition(condition: String) {
@@ -113,17 +114,17 @@ class FutureDetailWeatherFragment : ScopedFragment(), KodeinAware {
 
     private fun updatePrecipitation(precipitationVolume: Double) {
         val unitAbbreviation = chooseLocalizedUnitAbbreviation("mm", "in")
-        textView_precipitation.text = "Precipitation: $precipitationVolume $unitAbbreviation"
+        textView_precipitation1.text = "Precipitation: $precipitationVolume $unitAbbreviation"
     }
 
     private fun updateWindSpeed(windSpeed: Double) {
         val unitAbbreviation = chooseLocalizedUnitAbbreviation("kph", "mph")
-        textView_wind.text = "Wind speed: $windSpeed $unitAbbreviation"
+        textView_wind1.text = "Wind speed: $windSpeed $unitAbbreviation"
     }
 
     private fun updateVisibility(visibilityDistance: Double) {
         val unitAbbreviation = chooseLocalizedUnitAbbreviation("km", "mi.")
-        textView_visibility.text = "Visibility: $visibilityDistance $unitAbbreviation"
+        textView_visibility1.text = "Visibility: $visibilityDistance $unitAbbreviation"
     }
 
     private fun updateUv(uv: Double) {
