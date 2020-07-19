@@ -1,6 +1,6 @@
-/******************************************************************************
- *  Copyright (c) 2020, Created By Ahmed Alaa Elmaghraby.                     *
- ******************************************************************************/
+/*
+  Copyright (c) 7/19/20, Created By Ahmed Alaa Elmaghraby.
+ */
 
 package com.elmaghraby.ucptask.data.provider
 
